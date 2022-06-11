@@ -1,0 +1,274 @@
+// RESET STYLES
+*,*::after,*::before
+    box-sizing: border-box
+button
+    border: none
+    background-color: transparent
+h1,h2,h3,h4,h5,h6,p
+    margin:0
+body,html
+    position: relative
+    overflow-x: hidden    
+a
+    color: var(--White)
+    text-decoration: none  
+    
+    
+:root
+    // COLORS
+    --Black:#0b0d17
+    --Light_blue:#d0d6f9
+    --White:#fff
+    // FONT-SIZE
+    --heading1:150px
+    --heading2:100px
+    --heading3:56px
+    --heading4:32px
+    --heading5:28px
+    --subheading1:28px
+    --subheading2:14px
+    --navText:16px
+    --bodyText:18px
+    // CHARACTER SPACING
+    --spacing_h5:4.75px
+    --spacing_sub2:2.35px
+    --spacing_nav:2.7px
+    // LINE HEIGHT
+    --regularHeight:32px
+
+@media screen and (max-width:450px)
+    :root
+        // FONT-SIZE
+        --heading1:80px
+        --heading2:56px
+        --heading3:20px
+        --bodyText:15px
+        // LINE HEIGHT
+        --regularHeight:25px
+
+h1,.h1
+    color: var(--White)
+    text-transform: uppercase
+    font:
+        size: var(--heading1)
+        family:'Bellefair', serif
+h2,.h2
+    color: var(--White)
+    text-transform: capitalize
+    font:
+        size: var(--heading2)
+        family:'Bellefair', serif
+h3,.h3
+    color: var(--White)
+    text-transform: uppercase
+    font:
+        size: var(--heading3)
+        family:'Bellefair', serif
+h4,.h4
+    color: var(--White)
+    text-transform: uppercase
+    font:
+        size: var(--heading4)
+        family:'Bellefair', serif
+h5,.h5
+    color: var(--White)
+    text-transform: uppercase
+    font:
+        size: var(--heading5)
+        family:'Bellefair', serif
+    letter-spacing: var(--spacing_h5)
+
+.subbheading1
+    font:
+        size: var(--subheading1)
+        family:'Bellefair', serif
+.subbheading2
+    font:
+        size: var(--subheading2)
+        family:'Bellefair', serif
+    letter-spacing: var(--spacing_sub2)
+.bodyText
+    font:
+        size: var(--bodyText)
+        family:'Barlow', sans-serif
+    line-height: var(--regularHeight)
+.navText
+    font:
+        size: var(--navText)
+        family:'Barlow', sans-serif
+    letter-spacing: 2.7px
+    padding:.5rem
+
+// MISC UTILITY CLASSES
+.rounded
+    border-radius: 50%
+.text_center
+    text-align: center
+
+// CONCRET STYLES PER CLASS
+
+@mixin flex($direction,$wrap,$justify,$align)
+    display: flex
+    flex-flow: $direction $wrap
+    justify-content: $justify
+    align-items: $align
+
+body
+    width:100vw
+    min-height: 100vh
+    margin:0
+    background-image: url('../starter-code/assets/home/background-home-mobile.jpg')
+    background-repeat: no-repeat
+    background-attachment: fixed
+    background-size: cover
+    color: var(--Light_blue)
+// PAGE NAV STYLES
+.pageHeader
+    position: relative
+    @include flex(row,wrap,space-between,center)
+    width: 100%
+    height: 7rem
+.pageLogo
+    margin-left:2rem
+.pageNav
+    @include flex(row,wrap,flex-end,center)
+    width: 60%
+    height: 100%
+    margin-right: 2rem
+    &__button
+        position: relative
+        width:1.5rem
+        height:1.3rem
+        background-image: url('../starter-code/assets/shared/icon-hamburger.svg')
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+        z-index: 20
+    &__ul
+        @include flex(column,wrap,center,center)
+        gap:2rem
+        position: absolute
+        top:0
+        right:0
+        width: 80vw
+        height: 100vh
+        margin: 0
+        background-color: rgba(0 0 0 /.5)
+        -webkit-backdrop-filter: blur(2rem)
+        backdrop-filter: blur(2rem)
+        transform: translateX(100%)
+        transition: transform .3s
+        z-index:10
+        &--item
+            list-style: none
+// WHEN MENU IS OPENEND ON MOBILE STYLES
+.pageNav__ul.OPENED
+    transform: translateX(0)
+body.OPENED
+    overflow: hidden
+.pageNav__button.OPENED
+    background-image: url('../starter-code/assets/shared/icon-close.svg')
+// PAGE MAIN STYLES
+.exploreBtn
+    width: 40vw
+    height: 40vw
+    text-transform: uppercase
+    color: var(--Black)
+    background-color: var(--White)
+    padding:1rem
+    font-family: 'Bellefair', serif
+    font-size:20px
+    position: relative
+    margin-top: 10rem
+    cursor: pointer
+    &::after
+        content:''
+        position: absolute
+        top:0
+        left:0
+        display: inline-block
+        width:100%
+        height:100%
+        background-color: var(--Black)
+        opacity: .2
+        border-radius: 50%
+        z-index:-1
+        transition: transform .3s
+    &:hover::after
+        transform: scale(1.5)
+        
+.pageMain
+    @include flex(column,wrap,center,center)
+    gap:3rem
+    width: 100%
+    padding:.5rem
+.pageMain__content
+    @include flex(column,wrap,center,center)
+    width: 50%
+.pageIntro
+    width: max(20rem,40%)
+
+@media screen and (min-width:750px)
+    body
+        background-image: url('../starter-code/assets/home/background-home-tablet.jpg')
+    .pageMain
+        margin-top: 10rem
+    .exploreBtn
+        width: 30vw
+        height: 30vw
+        font-size:32px
+    .pageNav__button
+        display: none
+    .pageNav
+        width: 70%
+        height:100%
+        background-color: rgba(208 214 249 /.2)
+        margin:0
+        &__ul
+            @include flex(row,wrap,space-between,center)
+            gap:0
+            position: static
+            width: 100%
+            height: 100%
+            transform: translateX(0)
+            padding:0 1.2rem
+            &--item
+                position: relative
+    .pageNav__ul--item::after
+        content:''
+        display: inline-block
+        position: absolute
+        bottom:-90%
+        left:0
+        width:100%
+        height: 3px
+        background-color: var(--Light_blue)
+        transform: scaleX(0)
+        transition: transform .3s
+    .pageNav__ul--item:hover::after
+        transform: scaleX(1)
+
+@media screen and (min-width:1100px)
+    body
+        background-image: url('../starter-code/assets/home/background-home-desktop.jpg')
+    .exploreBtn
+        width: 20vw
+        height: 20vw
+        font-size:32px
+    .pageIntro
+        text-align: justify
+    .pageHeader
+        margin-top: 2.5rem
+    .pageNav
+        width:60%
+        &__ul
+            padding:2rem
+    .pageMain
+        margin-top:10rem
+        flex-direction: row
+        justify-content: space-around
+        align-items: center
+    .pageIntro
+        width:60%
+    .exploreBtn
+        margin-top:0
