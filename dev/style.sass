@@ -20,13 +20,13 @@ a
     --Light_blue:#d0d6f9
     --White:#fff
     // FONT-SIZE
-    --heading1:150px
+    --heading1:140px
     --heading2:100px
     --heading3:56px
     --heading4:32px
     --heading5:28px
     --subheading1:28px
-    --subheading2:14px
+    --subheading2:20px
     --navText:16px
     --bodyText:18px
     // CHARACTER SPACING
@@ -77,15 +77,16 @@ h5,.h5
         size: var(--heading5)
         family:'Bellefair', serif
     letter-spacing: var(--spacing_h5)
-
-.subbheading1
+.uppercase
+    text-transform: uppercase
+.subheading1
     font:
         size: var(--subheading1)
         family:'Bellefair', serif
-.subbheading2
+.subheading2
     font:
         size: var(--subheading2)
-        family:'Bellefair', serif
+        family:'Barlow', serif
     letter-spacing: var(--spacing_sub2)
 .bodyText
     font:
@@ -172,7 +173,6 @@ body.OPENED
 .exploreBtn
     width: 40vw
     height: 40vw
-    text-transform: uppercase
     color: var(--Black)
     background-color: var(--White)
     padding:1rem
@@ -200,6 +200,7 @@ body.OPENED
 .pageMain
     @include flex(column,wrap,center,center)
     gap:3rem
+    margin-top:10rem
     width: 100%
     padding:.5rem
 .pageMain__content
@@ -210,8 +211,6 @@ body.OPENED
 @media screen and (min-width:750px)
     body
         background-image: url('../starter-code/assets/home/background-home-tablet.jpg')
-    .pageMain
-        margin-top: 10rem
     .exploreBtn
         width: 30vw
         height: 30vw
@@ -276,7 +275,6 @@ body.OPENED
             opacity:.5
             z-index:20
     .pageMain
-        margin-top:10rem
         flex-direction: row
         justify-content: space-around
         align-items: center
