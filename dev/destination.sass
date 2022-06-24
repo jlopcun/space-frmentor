@@ -1,0 +1,113 @@
+@mixin flex($direction,$wrap,$justify,$align)
+    display: flex
+    flex-flow: $direction $wrap
+    justify-content: $justify
+    align-items: $align
+
+body
+    background-image: url('../starter-code/assets/destination/background-destination-mobile.jpg')
+
+.intro
+    text-transform: lowercase
+    text-align: center
+    margin-top:2rem
+    font:
+        size:16px
+        family:'Barlow' , sans-serif
+    &__number
+        color: #afafaf
+        margin-right:10px
+.mainContent
+    width:100%
+    @include flex(row,wrap,center,center)
+.mainContent__image
+    width: max(50%,34rem)
+    padding:5rem
+    & img
+        max-width:100%
+.mainContent__info
+    width: max(40%,34rem)
+    display: grid
+    justify-items: center
+    padding:2rem
+    &--title
+        text-align: center
+.mainContent__info--nav
+    width:100%
+    display: grid
+    justify-items: center
+.nav__ul
+    @include flex(row,wrap,space-evenly,center)
+    width:100%
+    margin:0 0 2rem 0
+    padding:0
+    &--item
+        position: relative
+        list-style: none
+        cursor: pointer
+        height:2rem
+        overflow: hidden
+        &::after
+            content:""
+            position: absolute
+            bottom:0
+            left:0
+            display: inline-block
+            width:100%
+            height:3px
+            background-color: #afafaf
+            transform-origin: left
+            transform: translateX(-100%)
+            transition: transform .3s
+        &:hover::after
+            transform: translateX(0)
+        &.actual::after
+            background-color: #fff
+            transform: translateX(0)
+
+.mainContent__info--data
+    @include flex(column,wrap,center,center)
+    width:100%
+    gap:4rem
+    margin-top: 2rem
+    padding-top:5rem
+    border-top:1px solid rgba(208 214 249/.3)
+.data-element
+    position: relative
+    &::after
+        content: attr(title)
+        position: absolute
+        top:-20px
+        left:0
+        display: inline-block
+        text-transform: uppercase
+        font:
+            family:'Barlow',sans-serif
+            size:.4em
+        color:#d0d6f9
+
+// MEDIA QUERY STYLES FOR TABLET
+@media screen and (min-width:750px)
+    body
+        background-image: url('../starter-code/assets/destination/background-destination-tablet.jpg')
+    .mainContent__info--data
+        flex-direction: row
+
+
+// MEDIA QUERY STYLES FOR DESKTOP
+@media screen and (min-width:1100px)
+    body
+        background-image: url('../starter-code/assets/destination/background-destination-desktop.jpg')
+    .intro
+        display: inline-block
+        margin-left:7vw
+        font-size:24px
+    .nav__ul
+        justify-content: flex-start
+        gap:2rem
+    .mainContent__info
+        justify-items: start
+        &--title
+            text-align: start
+    .mainContent__info--text
+        text-align: start 

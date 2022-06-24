@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Bellefair&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="../public/nav.css">
+    <link rel="stylesheet" href="../public/destination.css">
+    <title>01 Destination</title>
+</head>
+<body>
+    <h1 class="intro"><span class="intro__number">01</span> pick your destination</h1>
+    <main class="mainContent" id="planetContent">
+        <picture class="mainContent__image">
+            <img src="../starter-code/assets/destination/image-moon.webp" alt="planet destination image" data-planetInf="image">
+        </picture>
+        <div class="mainContent__info">
+            <div class="mainContent__info--nav" data-destination="moon">
+                <ul class="nav__ul" id="planetMenu">
+                    <li class="nav__ul--item actual" data-planet="Moon">Moon</li>
+                    <li class="nav__ul--item" data-planet="Mars">Mars</li>
+                    <li class="nav__ul--item" data-planet="Europa">Europa</li>
+                    <li class="nav__ul--item" data-planet="Titan">Titan</li>
+                </ul>
+            </div>
+            
+                <h2 class="mainContent__info--title pageTitle uppercase" data-planetInf="name">Moon</h2>
+                <p class="mainContent__info--text bodyText text_center" data-planetInf="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus excepturi modi tempore repudiandae recusandae, quia non iure numquam beatae, cumque doloremque possimus. Nemo sit saepe quo officiis cum corrupti perferendis.</p>
+                <div class="mainContent__info--data">
+                    <p class="subheading1 data__distance uppercase data-element" title="Avg. distance" data-planetInf="dist">123km</p>
+                    <p class="subheading1 data__time uppercase data-element" title="Est. travel time" data-planetInf="time">25 days</p>
+                </div>
+            </div>
+    </main>
+
+    <script type="module" src="../scripts/main.js"></script>
+    <script type="module" src="../scripts/destination.js"></script>
+</body>
+</html>
