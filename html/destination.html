@@ -16,11 +16,11 @@
     <h1 class="intro"><span class="intro__number">01</span> pick your destination</h1>
     <main class="mainContent" id="planetContent">
         <picture class="mainContent__image">
-            <img src="../starter-code/assets/destination/image-moon.webp" alt="planet destination image" data-planetInf="image">
+            <img src="../starter-code/assets/destination/image-moon.webp" alt="planet destination image" data-planetInf="images">
         </picture>
         <div class="mainContent__info">
             <div class="mainContent__info--nav" data-destination="moon">
-                <ul class="nav__ul" id="planetMenu">
+                <ul class="nav__ul" id="planetMenu" data-dataObj="planetInf">
                     <li class="nav__ul--item actual" data-planet="Moon">Moon</li>
                     <li class="nav__ul--item" data-planet="Mars">Mars</li>
                     <li class="nav__ul--item" data-planet="Europa">Europa</li>
@@ -29,10 +29,10 @@
             </div>
             
                 <h2 class="mainContent__info--title pageTitle uppercase" data-planetInf="name">Moon</h2>
-                <p class="mainContent__info--text bodyText text_center" data-planetInf="desc">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
+                <p class="mainContent__info--text bodyText text_center" data-planetInf="description">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
                 <div class="mainContent__info--data">
-                    <p class="subheading1 data__distance uppercase data-element" title="Avg. distance" data-planetInf="dist">123km</p>
-                    <p class="subheading1 data__time uppercase data-element" title="Est. travel time" data-planetInf="time">25 days</p>
+                    <p class="subheading1 data__distance uppercase data-element" title="Avg. distance" data-planetInf="distance">123km</p>
+                    <p class="subheading1 data__time uppercase data-element" title="Est. travel time" data-planetInf="travel">25 days</p>
                 </div>
             </div>
     </main>
