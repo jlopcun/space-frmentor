@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Bellefair&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="../public/nav.css">
+    <link rel="stylesheet" href="../public/crew.css">
+    <title>02 Crew</title>
+</head>
+<body>
+    <h1 class="intro"><span class="intro__number">02</span> meet your crew</h1>
+    <main class="mainContent" id="crewContent">
+        <picture class="mainContent__image">
+            <img src="../starter-code/assets/crew/image-douglas-hurley.webp" alt="crew member image" data-crew="images">
+        </picture>
+        <div class="mainContent__info">
+            <div class="mainContent__info--nav">
+                <ul class="nav__ul" id="crewMenu" data-dataObj="crew" data-query="crew">
+                    <li class="nav__ul--item actual" data-member="Douglas Hurley"><div class="nav__ul--item_dot rounded"></div></li>
+                    <li class="nav__ul--item" data-member="Mark Shuttleworth"><div class="nav__ul--item_dot rounded"></div></li>
+                    <li class="nav__ul--item" data-member="Victor Glover"><div class="nav__ul--item_dot rounded"></div></li>
+                    <li class="nav__ul--item" data-member="Anousheh Ansari"><div class="nav__ul--item_dot rounded"></div></li>
+                </ul>
+            </div>
+            <div class="mainContent__info--wrapper">
+                <p class="mainContent__info--role subheading1 uppercase" data-crew="role">commnader</p>
+                <h2 class="mainContent__info--name uppercase " data-crew="name">Douglas Hurley</h2>
+                <p class="mainContent__info--bio bodyText" data-crew="bio">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</p>
+            </div>
+        </div>
+        
+    </main>
+    <script src="../scripts/main.js" type="module"></script>
+    <script src="../scripts/crew.js" type="module"></script>
+</body>
+</html>

@@ -1,14 +1,13 @@
-import {updatePage } from "../scripts/fetchData.js"
+import {updatePage} from "./fetchData.js"
 
-const $planetMenu = document.getElementById('planetMenu'),
-$planetContent = document.getElementById('planetContent')
-
+const $crewMenu = document.getElementById('crewMenu'),
+$crewContent = document.getElementById('crewContent')
 
 
 window.addEventListener('DOMContentLoaded',()=>{
-    $planetMenu.addEventListener('click',async (e)=>{
+    $crewMenu.addEventListener('click',async (e)=>{
         if(e.currentTarget===e.target) return
-        updatePage(e.currentTarget,e.target,$planetContent,'planet')
+        updatePage(e.currentTarget,e.target.parentNode,$crewContent,'member')
         
         
         // const dataobj = e.currentTarget.dataset.dataobj

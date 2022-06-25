@@ -12,10 +12,11 @@ async function fetchData(final,query){
 }
 
 
-async function updatePage(menuContainer,menuElement,parentElement){
+async function updatePage(menuContainer,menuElement,parentElement,dataMenu){
     if(menuContainer===menuElement) return
         
-        const dataobj = menuContainer.dataset.dataobj
+        const dataobj = menuContainer.dataset.dataobj,
+        dataQuery = menuContainer.dataset.query
         
         const allElements = Array.from(menuContainer.children)
         allElements.forEach(el=>{
@@ -24,8 +25,7 @@ async function updatePage(menuContainer,menuElement,parentElement){
         menuElement.classList.add('actual')
 
         
-
-        const data = await  fetchData('destinations',menuElement.dataset.planet)
+        const data = await  fetchData(dataQuery,menuElement.dataset[dataMenu])
 
         Object.entries(data).forEach(part=>{
             const relativeElement =  parentElement.querySelector(`[data-${dataobj}=${part[0]}]`)
