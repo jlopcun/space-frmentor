@@ -13,8 +13,7 @@ async function fetchData(final,query){
 
 
 async function updatePage(menuContainer,menuElement,parentElement,dataMenu){
-    if(menuContainer===menuElement) return
-        
+    // if(menuContainer===menuElement) return
         const dataobj = menuContainer.dataset.dataobj,
         dataQuery = menuContainer.dataset.query
         
@@ -26,9 +25,10 @@ async function updatePage(menuContainer,menuElement,parentElement,dataMenu){
 
         
         const data = await  fetchData(dataQuery,menuElement.dataset[dataMenu])
-
+        console.log(Object.entries(data))
         Object.entries(data).forEach(part=>{
             const relativeElement =  parentElement.querySelector(`[data-${dataobj}=${part[0]}]`)
+            console.log(part[1])
             if(relativeElement.tagName==='IMG') relativeElement.src = part[1].webp
             else relativeElement.textContent = part[1]
         })
